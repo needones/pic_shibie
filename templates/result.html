@@ -11,17 +11,42 @@
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
     <style>
         #main {
-            background-image: url(static/img/20190523231747.jpg);
+            background-image: url({% static 'img/20190523231747.jpg' %});
             background-repeat: no-repeat;
-            width:100%;
-            height:100%;
-            background-size:100% 100%;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
         }
     </style>
 </head>
 <body>
 <div id="main" style="width: 60%;height: 700px;margin: 0 auto;">
-    <div style="width: 100%;height: 500px;"></div>
+    <div style="width: 100%;height: 400px;"></div>
+    <div style="width: 100%;height: 200px;">
+        <table>
+            <th>
+                <td colspan="2">识别结果</td>
+
+            </th>
+            <tr>
+                <td>绿色识别率</td>
+                <td>{{ area }}</td>
+            </tr>
+
+                <tr>
+                    <td>生长状况</td>
+                    {% if result %}
+                    <td>{{ result }}</td>
+                        {% else %}
+                        <td>正常</td>
+                    {% endif %}
+                </tr>
+
+        </table>
+    </div>
+    <div style="text-align: center">
+        <a href="{% url 'index' %}" style="font-size: 40px"> back</a>
+    </div>
 
 
 </div>

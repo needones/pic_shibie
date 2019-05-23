@@ -32,11 +32,13 @@ def shibie(img):
         k = random.randint(5, 10)
 
     if k < 8:
-        result = ''
-
+        result = '生长异常'
+    else:
+        result= None
     data = {
         'area': '{}%'.format(k),
-        'type': '{}'.format(eat)
+        'type': '{}'.format(eat),
+        'result':result
     }
     return data
 
@@ -54,4 +56,8 @@ class IndexView(View):
         else:
             data = shibie(img.name)
 
-        return render(request,'result.html',context=data)
+        return render(request, 'result.html', context=data)
+
+
+def test(request):
+    return render(request, 'result.html')
