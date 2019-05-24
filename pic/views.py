@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 
+from pic import settings
+
 
 def shibie(img):
     pic = img.split('.')[0][-1]
@@ -34,11 +36,11 @@ def shibie(img):
     if k < 8:
         result = '生长异常'
     else:
-        result= None
+        result = None
     data = {
         'area': '{}%'.format(k),
         'type': '{}'.format(eat),
-        'result':result
+        'result': result
     }
     return data
 
@@ -54,7 +56,12 @@ class IndexView(View):
                 'info': '请上传图片'
             }
         else:
+            img_name = settings.MEDIA_URL + img.name
+            with open(img_name, 'wb')as f:
+                for fimg in img.chunks:
+                    f.write(fimg)
             data = shibie(img.name)
+            data['img'] = img_name
 
         return render(request, 'result.html', context=data)
 
