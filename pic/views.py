@@ -56,7 +56,7 @@ class IndexView(View):
                 'info': '请上传图片'
             }
         else:
-            img_name = settings.MEDIA_URL + img.name
+            img_name = 'media/' + img.name
             with open(img_name, 'wb')as f:
                 for fimg in img.chunks():
                     f.write(fimg)
