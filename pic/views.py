@@ -58,7 +58,7 @@ class IndexView(View):
         else:
             img_name = settings.MEDIA_URL + img.name
             with open(img_name, 'wb')as f:
-                for fimg in img.chunks:
+                for fimg in img.chunks():
                     f.write(fimg)
             data = shibie(img.name)
             data['img'] = img_name
