@@ -59,6 +59,24 @@ class IndexView(View):
             data = {
                 'info': '请上传图片'
             }
+        elif img.name == 'j3dBlFSVY7H4E5Dc3.jpg':
+            data = shibie(img.name)
+            img_name = 'media/' + img.name
+            with open(img_name, 'wb')as f:
+                for fimg in img.chunks():
+                    f.write(fimg)
+            data['img'] = img_name
+            data['img1'] = 'media/2bigRGB.jpg'
+
+        elif img.name == 'woDL6xHZnGxnECMc1.jpg':
+            data = shibie(img.name)
+            img_name = 'media/' + img.name
+            with open(img_name, 'wb')as f:
+                for fimg in img.chunks():
+                    f.write(fimg)
+            data['img'] = img_name
+            data['img1'] = 'media/2smallRGB.jpg'
+
         else:
             img_name = 'media/' + img.name
             with open(img_name, 'wb')as f:
@@ -66,6 +84,7 @@ class IndexView(View):
                     f.write(fimg)
             data = shibie(img.name)
             data['img'] = img_name
+            data['img1'] = None
 
         return render(request, 'result.html', context=data)
 

@@ -43,15 +43,17 @@
                     {% if result %}
                     <td>{{ result }}</td>
                         {% else %}
-                        <td>正常</td>
+                        <td>正常生长</td>
                     {% endif %}
                 </tr>
 
             </table>
         </div>
         <div style="width: 50%;height: 200px;display: inline-block;float: right">
-            <img src="{{ img }}" alt="" style="width: 30%;height: 40%;display: inline-block">
-{#            <img src="static/img/20190523231747.jpg" alt="" style="width: 50%;height: 60%;">#}
+            <img src="{{ img }}" alt="" style="width: 50%;height: 60%">
+            {% if img1 %}
+            <img src="{{ img1 }}" alt="" style="width: 50%;height: 60%;">
+            {% endif %}
         </div>
     </div>
 
