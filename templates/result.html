@@ -23,11 +23,12 @@
 <div id="main" style="width: 60%;height: 700px;margin: 0 auto;">
     <div style="width: 100%;height: 400px;"></div>
     <div style="width: 100%;height: 200px;">
-        <table>
-            <th>
-                <td colspan="2">识别结果</td>
+        <div style="width: 50%;height: 200px;">
+            <table>
+                <th>
+                    <td colspan="2">识别结果</td>
 
-            </th>
+                </th>
             <tr>
                 <td>绿色识别率</td>
                 <td>{{ area }}</td>
@@ -42,7 +43,11 @@
                     {% endif %}
                 </tr>
 
-        </table>
+            </table>
+        </div>
+        <div style="width: 50%;height: 200px;float: left">
+            <img src="{{ img }}" alt="">
+        </div>
     </div>
     <div style="text-align: center">
         <a href="{% url 'index' %}" style="font-size: 40px"> back</a>
