@@ -43,7 +43,7 @@ def shibie(img):
         'type': '{}'.format(eat),
         'result': result
     }
-    num = random.randint(5, 10)
+    num = random.randint(2, 6)
     sleep(num)
 
     return data
