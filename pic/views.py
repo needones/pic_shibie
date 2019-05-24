@@ -1,4 +1,5 @@
 import random
+from time import sleep
 
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -27,9 +28,9 @@ def shibie(img):
     if pic == '1':
         k = random.randint(8, 12)
     elif pic == '2':
-        k = random.randint(12, 18)
+        k = random.randint(12, 22)
     elif pic == '3':
-        k = random.randint(18, 23)
+        k = random.randint(30, 50)
     else:
         k = random.randint(5, 10)
 
@@ -42,6 +43,9 @@ def shibie(img):
         'type': '{}'.format(eat),
         'result': result
     }
+    num = random.randint(5, 10)
+    sleep(num)
+
     return data
 
 
