@@ -26,9 +26,9 @@ def shibie(img):
     else:
         eat = '缺水'
     if pic == '1':
-        k = random.randint(8, 12)
+        k = random.randint(10, 18)
     elif pic == '2':
-        k = random.randint(12, 22)
+        k = random.randint(15, 25)
     elif pic == '3':
         k = random.randint(30, 50)
     else:
